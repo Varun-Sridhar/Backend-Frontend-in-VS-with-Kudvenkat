@@ -1,0 +1,40 @@
+﻿<link rel="stylesheet" href="//cdn.webix.com/edge/webix.css" />
+<script src="//cdn.webix.com/edge/webix.js"></script>
+
+<div>
+    <script>
+    var dataset = {{scores}};
+        webix.ready(function () {
+            debugger;
+        webix.ui({
+            view: "chart",
+            width: 600,
+            height: 250,
+            type: "line",
+            value: "#{{scores.Score}}#",
+            item: {
+                borderColor: "#1293f8",
+                color: "#ffffff"
+            },
+            line: {
+                color: "#1293f8",
+                width: 3
+            },
+            xAxis: {
+                template: "#scores.Date#"
+            },
+            offset: 0,
+            yAxis: {
+                start: 0,
+                end: 100,
+                step: 10,
+                template: function (obj) {
+                    return (obj % 20 ? "" : obj)
+                }
+            },
+            data: scores
+        });
+        webix.message("DblClick row to edit")
+    });
+    </script>
+</div>

@@ -1,0 +1,32 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th attr.colspan="{{columnSpan}}">
+                Employee Details
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>FirstName</td>
+            <td>{{firstname}}</td>
+        </tr>
+        <tr>
+            <td>LastName</td>
+            <td>{{lastname}}</td>
+        </tr>
+        <tr *ngIf='showDetails'>
+            <td>Gender</td>
+            <td>{{gender}}</td>
+        </tr>
+        <tr *ngIf='showDetails'>
+            <td>Age</td>
+            <td>{{age}}</td>
+        </tr>
+    </tbody>
+    
+</table>
+<button on-click ="toggleDetails()">
+    {{showDetails? 'Hide' : 'Show' }} Details
+</button>
+
